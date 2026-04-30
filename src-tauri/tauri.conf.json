@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nicedoc/schemas/main/schemas/tauri/config.schema.json",
+  "productName": "Claude Token Monitor",
+  "identifier": "com.ggssh.claude-token-monitor",
+  "version": "0.1.0",
+
+  "build": {
+    "beforeDevCommand": "python3 -m http.server 1420 --directory src --bind 127.0.0.1",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "",
+    "frontendDist": "../src"
+  },
+
+  "app": {
+    "windows": [],
+    "withGlobalTauri": true,
+    "macOSPrivateApi": true,
+    "security": {
+      "csp": null
+    }
+  },
+
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.png",
+      "icons/icon.icns"
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Monitor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <div class="header" data-tauri-drag-region>
+      <div class="header-left">
+        <span class="dot active"></span>
+        <span class="app-title">Claude Code</span>
+      </div>
+      <div class="header-right">
+        <span class="model-badge" id="model-name">--</span>
+        <button class="sync-btn" id="sync-btn" title="Refresh now">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <polyline points="1 20 1 14 7 14"></polyline>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="section">
+        <div class="section-title">TOKENS</div>
+        <div class="token-rows">
+          <div class="token-row">
+            <span class="token-label">Input</span>
+            <div class="token-right">
+              <span class="token-value" id="effective-input">--</span>
+              <span class="token-sub" id="input-detail">--</span>
+            </div>
+          </div>
+          <div class="token-row">
+            <span class="token-label">Output</span>
+            <span class="token-value" id="output-tokens">--</span>
+          </div>
+          <div class="token-row">
+            <span class="token-label">Context</span>
+            <div class="context-bar-wrap">
+              <div class="context-bar"><div class="context-fill" id="context-fill"></div></div>
+              <span class="context-pct" id="context-pct">--</span>
+            </div>
+          </div>
+          <div class="token-row">
+            <span class="token-label">Requests</span>
+            <span class="token-value-sm" id="request-count">--</span>
+          </div>
+          <div class="token-divider"></div>
+          <div class="token-row total-row-inline">
+            <span class="token-label">Total</span>
+            <span class="token-value total-inline" id="total-tokens">--</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section heatmap-section">
+        <div class="section-title">ACTIVITY</div>
+        <div id="heatmap"></div>
+        <div class="heatmap-legend">
+          <span>Less</span>
+          <span class="legend-color l0"></span>
+          <span class="legend-color l1"></span>
+          <span class="legend-color l2"></span>
+          <span class="legend-color l3"></span>
+          <span class="legend-color l4"></span>
+          <span>More</span>
+        </div>
+      </div>
+
+      <div class="section sessions-section">
+        <div class="section-title">TOP SESSIONS</div>
+        <div id="sessions-list"></div>
+      </div>
+
+      <div class="section trend-section">
+        <div class="section-title">
+          <span>DAILY TREND</span>
+          <div class="trend-range-toggle" id="trend-range-toggle">
+            <button class="range-btn" data-range="7">7d</button>
+            <button class="range-btn active" data-range="14">14d</button>
+            <button class="range-btn" data-range="30">30d</button>
+          </div>
+        </div>
+        <div id="trend-chart"></div>
+      </div>
+
+    </div>
+  </div>
+  <script src="utils.js"></script>
+  <script src="theme.js"></script>
+  <script src="render.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

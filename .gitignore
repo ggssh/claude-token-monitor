@@ -1,0 +1,41 @@
+# Rust / Cargo
+target/
+Cargo.lock
+*.rs.bk
+
+# Node
+node_modules/
+package-lock.json
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Tauri
+src-tauri/target/
+src-tauri/gen/
+
+# Build artifacts
+dist/
+*.dmg
+*.app
+*.deb
+*.rpm
+*.msi
+*.exe
+
+# Logs
+*.log
+
+# Env
+.env
+.env.local

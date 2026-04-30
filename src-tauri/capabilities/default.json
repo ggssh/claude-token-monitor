@@ -1,0 +1,10 @@
+{
+  "identifier": "default",
+  "description": "Default capabilities",
+  "windows": ["panel"],
+  "permissions": [
+    "core:default",
+    "core:window:allow-start-dragging",
+    "shell:allow-open"
+  ]
+}

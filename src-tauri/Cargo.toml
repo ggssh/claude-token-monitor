@@ -1,0 +1,24 @@
+[package]
+name = "token-monitor"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "token_monitor"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "macos-private-api"] }
+tauri-plugin-shell = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+notify = { version = "7", features = ["macos_kqueue"] }
+chrono = { version = "0.4", features = ["serde"] }
+url = "2"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+window-vibrancy = "0.6"
