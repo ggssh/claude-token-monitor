@@ -15,13 +15,13 @@ A lightweight macOS menu bar app that monitors your Claude Code token usage in r
 
 ## Screenshot
 
-<!-- Add screenshot here -->
+![Claude Token Monitor](docs/screenshot.png)
 
 ## Installation
 
 ### Download
 
-<!-- Add release download links here when available -->
+Download the latest `.dmg` from [Releases](https://github.com/ggssh/claude-token-monitor/releases/latest).
 
 ### Build from source
 
@@ -42,9 +42,13 @@ The binary will be at `target/release/token-monitor`.
 
 ### Development
 
+**Prerequisites:**
+
+- [Tauri CLI](https://v2.tauri.app/start/prerequisites/): `cargo install tauri-cli`
+
 ```bash
-# Start dev server (serves frontend on http://127.0.0.1:1420)
-cargo run -p token-monitor
+# Start dev server with hot reload
+cargo tauri dev
 ```
 
 ## How it works
